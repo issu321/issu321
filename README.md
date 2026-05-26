@@ -1,4 +1,4 @@
-Hi, I’m Mohammed Usman
+Mohammed Usman
 
 AI | ML | Data Science | Futuristic Tech Explorer 🚀
 
