@@ -94,7 +94,7 @@
 
   <!-- Main Title -->
   <text x="400" y="95" font-family="monospace" font-size="46" font-weight="bold" fill="#e6edf3" text-anchor="middle" filter="url(#aiGlow)">
-    U S S U  3 2 1
+    i s s u  3 2 1
   </text>
 
   <!-- Professional Subtitle -->
