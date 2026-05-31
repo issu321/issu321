@@ -533,6 +533,6 @@ Hello! I'm **Ussu** ( **`issu321`** ), an AI-driven developer operating at the i
 
 <br>
 
-**Built with 🤖, 🧠, and endless training epochs by [Ussu321](https://github.com/issu321)**
+**Built with 🤖, 🧠, and endless training epochs by [issu321](https://github.com/issu321)**
 
 </div>
