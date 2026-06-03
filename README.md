@@ -419,7 +419,7 @@ Hello! I'm **Ussu** ( **`issu321`** ), an AI-driven developer operating at the i
   <img src="https://img.shields.io/badge/GitHub-issu321-00d4ff?style=for-the-badge&logo=github&logoColor=white&labelColor=0d1117" />
 </a>
 <a href="https://github.com/issu321" target="_blank">
-  <img src="https://img.shields.io/badge/Portfolio-Coming%20Soon-7c3aed?style=for-the-badge&logo=firefox&logoColor=white&labelColor=0d1117" />
+  <img src="https://issu321.github.io/issu321-My %20 Portfolio-7c3aed?style=for-the-badge&logo=firefox&logoColor=white&labelColor=0d1117" />
 </a>
 <a href="https://github.com/issu321" target="_blank">
   <img src="https://img.shields.io/badge/LinkedIn-Connect-00d4ff?style=for-the-badge&logo=linkedin&logoColor=white&labelColor=0d1117" />
