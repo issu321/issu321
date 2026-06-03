@@ -292,14 +292,6 @@ Hello! I'm **Ussu** ( **`issu321`** ), an AI-driven developer operating at the i
 
 ## 📊 GitHub Contribution Streak
 
-<div align="center">
-
-<!-- Streak Stats -->
-<img src="https://github-readme-streak-stats.herokuapp.com/?user=issu321&theme=radical&hide_border=true&background=0d1117&stroke=00d4ff&ring=7c3aed&fire=00ff88&currStreakNum=e6edf3&sideNums=e6edf3&currStreakLabel=00d4ff&sideLabels=00d4ff&dates=8b949e" width="80%" />
-
-</div>
-
----
 
 ## 🧠 AI & ML Projects Showcase
 
