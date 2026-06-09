@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <title>Projects | Mohammed Usman</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Inter:wght@300;400;500;600;700&family=Orbitron:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="theme.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="skeleton-loader" id="skeletonLoader">
+        <div class="skeleton-prism"></div>
+        <div class="skeleton-text">INITIALIZING PRISM...</div>
+    </div>
+
+    <div class="bg-canvas">
+        <canvas id="particleCanvas"></canvas>
+    </div>
+    <div class="bg-overlay"></div>
+    <div class="bg-noise"></div>
+
+    <nav class="navbar" id="navbar">
+        <a href="index.html" class="nav-logo">MU</a>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="skills.html">Skills</a></li>
+            <li><a href="projects.html">Projects</a></li>
+            <li><a href="focus.html">Focus</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><button class="theme-toggle" id="themeToggle" aria-label="Toggle theme"><span class="theme-icon">☀️</span></button></li>
+        </ul>
+        <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+    </nav>
+
+    <section class="projects" id="projects" style="padding-top: 120px;">
+        <div class="section-header fade-in">
+            <span class="section-label">03 // My Aura of Work(PROJECTS)</span>
+            <h2 class="section-title">Bold. Clean. Intelligent.</h2>
+            <div class="section-divider"></div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="search-container fade-in stagger-1">
+            <div class="search-wrapper">
+                <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="m21 21-4.35-4.35"/>
+                </svg>
+                <input type="text" class="search-input" id="projectSearch" placeholder="Search projects by name, tech, or keyword... (Ctrl+K)" autocomplete="off">
+                <button class="search-clear" id="searchClear" aria-label="Clear search">✕</button>
+            </div>
+            <div class="search-results-count" id="searchResultsCount"></div>
+        </div>
+
+        <!-- No Results State -->
+        <div class="no-results" id="noResults">
+            <div class="no-results-icon">🔍</div>
+            <h3>No Projects Found</h3>
+            <p>Try a different search term</p>
+        </div>
+
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card fade-in stagger-1">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Algorithm Analyzer</h3>
+                    <p>A complete algorithm analysis toolkit for Kali Linux covering BFS, DFS, Shortest Path, Longest
+                        Path, MST, Time/Space Complexity, and Advanced Mathematical Calculations.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Graphs Generation</span>
+                        <span>APIs</span>
+                        <span>Automation</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/ussu321/Analysis-of-Algorithms" target="_blank"
+                            rel="noopener noreferrer" class="btn-view">View Code<span class="wave"></span></a>
+                        <a href="https://analysis-of-algorithm-ussu321.streamlit.app/" target="_blank"
+                            rel="noopener noreferrer" class="btn-code">Live Demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card fade-in stagger-2">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 0v20m-10-10h20" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Animated Globe Login Page</h3>
+                    <p>Futuristic animated globe-based login interface with immersive UI animations, responsive layouts,
+                        and interactive visual effects for modern authentication systems.</p>
+                    <div class="project-tech">
+                        <span>Animated Globe</span>
+                        <span>JavaScript</span>
+                        <span>UI Animations</span>
+                        <span>Login Interface</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/Animated-globe-login" target="_blank"
+                            rel="noopener noreferrer" class="btn-view">View
+                            Code<span class="wave"></span></a>
+                        <a href="https://issu321.github.io/Animated-globe-login/" target="_blank"
+                            rel="noopener noreferrer" class="btn-code">Live
+                            Demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card fade-in stagger-3">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Cyber Security Python</h3>
+                    <p>Advanced cybersecurity toolkit developed with Python for ethical hacking, vulnerability analysis,
+                        automation scripts, security testing, and real-time system protection workflows.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Cyber Security</span>
+                        <span>Automation</span>
+                        <span>Vulnerability Analysis</span>
+                        <span>Network Security</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/Cyber-Security-Python" target="_blank"
+                            rel="noopener noreferrer" class="btn-view">View
+                            Code<span class="wave"></span></a>
+                        <a href="https://python-security-ussu321.streamlit.app/" target="_blank"
+                            rel="noopener noreferrer" class="btn-code">Live
+                            Demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="project-card fade-in stagger-4">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Stock Analytics Dashboard</h3>
+                    <p>End-to-end data pipeline with real-time visualization, predictive modelling, and automated
+                        insights generation for business intelligence.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Pandas</span>
+                        <span>Scikit-Learn</span>
+                        <span>Data Viz</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/Stock-Price-Prediction-Using-Machine-Learning"
+                            target="_blank" rel="noopener noreferrer" class="btn-view">View Code<span
+                                class="wave"></span></a>
+                        <a href="https://stock-price-prediction-python-issu321.streamlit.app/" target="_blank"
+                            rel="noopener noreferrer" class="btn-code">Live Demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+             <!-- Project 22 -->
+            <div class="project-card fade-in stagger-22">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Image Data Extractor – OCR & Text Recognition System</h3>
+                    <p>An intelligent image processing application that extracts text and structured information from images using Optical Character Recognition (OCR). The system supports multilingual text recognition, document analysis, and automated data extraction workflows.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>OCR</span>
+                        <span>Computer Vision</span>
+                        <span>Image Processing</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/Image-Data-Extract-Python" target="_blank" class="btn-view">View Code<span class="wave"></span></a>
+                        <a href="https://huggingface.co/spaces/issu321/Image-Data-Extract" class="btn-code">Live demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 23 -->
+            <div class="project-card fade-in stagger-23">
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Programming Visualization – Interactive Code Learning Platform</h3>
+                    <p>An educational programming visualization platform that transforms source code into interactive visual representations, helping students and beginners understand program execution, algorithms, functions, control flow, and data structures step by step.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>Code Visualization</span>
+                        <span>Programming Education</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/Programming-Visualization" target="_blank" class="btn-view">View Code</a>
+                        <a href="https://huggingface.co/spaces/issu321/Programming-Visualization" target="_blank" class="btn-code">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 24 -->
+            <div class="project-card fade-in stagger-24">
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>AI Data Scientist – Automated Data Analysis Platform</h3>
+                    <p>An end-to-end AI-powered data science platform that automates data preprocessing, exploratory data analysis, statistical insights, visualization, machine learning model generation, and predictive analytics through an interactive Streamlit interface.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Streamlit</span>
+                        <span>Machine Learning</span>
+                        <span>Data Science</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/AI-Data-Scientist" target="_blank" class="btn-view">View Code</a>
+                        <a href="https://ai-data-scientist-issu321.streamlit.app/" target="_blank" class="btn-code">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="project-card fade-in stagger-5">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>LLM Apps & AI Services</h3>
+                    <p>Convolutional Neural Network built with TensorFlow/PyTorch for multi-class image classification
+                        with high accuracy and real-time inference.</p>
+                    <div class="project-tech">
+                        <span>TensorFlow</span>
+                        <span>PyTorch</span>
+                        <span>CNN</span>
+                        <span>Computer Vision</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/LLM-APPS-AI-Services" target="_blank"
+                            rel="noopener noreferrer" class="btn-view">View
+                            Code<span class="wave"></span></a>
+                        <a href="https://www.theunwindai.com/" target="_blank" rel="noopener noreferrer"
+                            class="btn-code">Live Demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="project-card fade-in stagger-6">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Expense Tracker System</h3>
+                    <p>A personal finance management application that helps users track daily expenses, monitor spending
+                        habits, categorize transactions, and visualize financial data through an interactive dashboard.
+                    </p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Streamlit</span>
+                        <span>Data Visualization</span>
+                        <span>Finance Management</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/ussu321/Your-Expense-Tracker-Python" target="_blank"
+                            rel="noopener noreferrer" class="btn-view">View Code<span class="wave"></span></a>
+                        <a href="https://your-expense-tracker-python-ussu321.streamlit.app/" target="_blank"
+                            rel="noopener noreferrer" class="btn-code">Live Demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 25 -->
+            <div class="project-card fade-in stagger-25">
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Mental Health Analysis from Social Media Text</h3>
+                    <p>An AI-powered NLP platform that analyzes social media text to detect mental health indicators, emotional patterns, sentiment trends, stress levels, anxiety signals, and behavioral insights through advanced machine learning and natural language processing techniques.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>NLP</span>
+                        <span>Machine Learning</span>
+                        <span>Hugging Face</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/Mental-Health-Analysis-from-Social-Media-Text" target="_blank" class="btn-view">View Code</a>
+                        <a href="https://huggingface.co/spaces/issu321/Mental-Health-Analysis-from-Social-Media-Text" target="_blank" class="btn-code">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 7 -->
+            <div class="project-card fade-in stagger-7">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>PhantomRange Cybersecurity Toolkit</h3>
+                    <p>A cybersecurity-focused platform designed for security assessment, network analysis,
+                        vulnerability detection, and ethical hacking demonstrations with an intuitive web interface.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Cybersecurity</span>
+                        <span>Network Analysis</span>
+                        <span>Streamlit</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/PhantomRange" target="_blank" rel="noopener noreferrer"
+                            class="btn-view">View Code<span class="wave"></span></a>
+                        <a href="https://phantomrange-python-issu321.streamlit.app/" target="_blank"
+                            rel="noopener noreferrer" class="btn-code">Live Demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 8 -->
+            <div class="project-card fade-in stagger-8">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Loan Approval Prediction System</h3>
+                    <p>A machine learning application that predicts loan approval status based on applicant details,
+                        financial history, income, and credit-related features to assist decision-making.</p>
+                    <div class="project-tech">
+                        <span>Machine Learning</span>
+                        <span>Python</span>
+                        <span>Scikit-Learn</span>
+                        <span>Streamlit</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/Loan-Approval-Prediction-System" target="_blank"
+                            rel="noopener noreferrer" class="btn-view">View Code<span class="wave"></span></a>
+                        <a href="https://loan-approval-prediction-system-issu321.streamlit.app/" target="_blank"
+                            rel="noopener noreferrer" class="btn-code">Live Demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 9 -->
+            <div class="project-card fade-in stagger-9">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Cyberbullying Detection on Social Media</h3>
+                    <p>An NLP and machine learning system that analyzes social media content to identify cyberbullying,
+                        toxic comments, and harmful online interactions in real time.</p>
+                    <div class="project-tech">
+                        <span>NLP</span>
+                        <span>Machine Learning</span>
+                        <span>Python</span>
+                        <span>Text Classification</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/Cyberbullying-Detection-on-Social-Media" target="_blank"
+                            rel="noopener noreferrer" class="btn-view">View Code<span class="wave"></span></a>
+                        <a href="https://cyberbullying-detection-on-social-media-issu321.streamlit.app/" target="_blank"
+                            rel="noopener noreferrer" class="btn-code">Live Demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 10 -->
+            <div class="project-card fade-in stagger-10">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Mac-Linux System Utilities</h3>
+                    <p>A collection of Linux and macOS tools, automation scripts, system management utilities, and
+                        productivity enhancements designed to simplify development workflows and operating system tasks.
+                    </p>
+                    <div class="project-tech">
+                        <span>Linux</span>
+                        <span>macOS</span>
+                        <span>Bash Scripting</span>
+                        <span>System Administration</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/Mac-Linux-" target="_blank" rel="noopener noreferrer"
+                            class="btn-view">View Code<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 11 -->
+            <div class="project-card fade-in stagger-11">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Windows Update Control Utility</h3>
+                    <p>A Windows system configuration utility that helps users manage and restrict unwanted automatic
+                        updates by modifying update-related settings, providing greater control over system maintenance
+                        and update behavior.</p>
+                    <div class="project-tech">
+                        <span>Windows</span>
+                        <span>Registry Configuration</span>
+                        <span>System Administration</span>
+                        <span>PowerShell</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/Windows-update-value-0" target="_blank"
+                            class="btn-view">View Code<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 12 -->
+            <div class="project-card fade-in stagger-12">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>USMANIA Industries – ML & Robotics Research Platform</h3>
+                    <p>A technology-focused platform developed for studying Machine Learning, Artificial Intelligence,
+                        and Robotics concepts through research, experimentation, innovation showcases, and educational
+                        resources.</p>
+                    <div class="project-tech">
+                        <span>Machine Learning</span>
+                        <span>Artificial Intelligence</span>
+                        <span>Robotics</span>
+                        <span>Research & Development</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/USMANIA-INDUSTRIES" target="_blank" class="btn-view">View
+                            Code<span class="wave"></span></a>
+                        <a href="https://issu321.github.io/USMANIA-INDUSTRIES/" target="_blank" class="btn-code">Live
+                            Demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 27 -->
+            <div class="project-card fade-in stagger-27">
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Hands Tracker – Real-Time Gesture Recognition System</h3>
+                    <p>An advanced Flask-based computer vision application that performs real-time hand tracking and gesture recognition using webcam input. The system detects hand landmarks, tracks finger movements, visualizes hand positions, and enables interactive gesture-based applications through AI-powered vision processing.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>OpenCV</span>
+                        <span>MediaPipe</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/Hands-Tracker-Python-Flask" target="_blank" class="btn-view">View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 13 -->
+            <div class="project-card fade-in stagger-13">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>USB UTIL Advanced PS2 Software Suite</h3>
+                    <p>A PlayStation 2 USB management and configuration toolkit designed to organize game files, manage
+                        USB-based game loading setups, configure PS2 software environments, and improve compatibility
+                        for console gaming workflows.</p>
+                    <div class="project-tech">
+                        <span>PlayStation 2</span>
+                        <span>USB UTIL</span>
+                        <span>Game Management</span>
+                        <span>System Configuration</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/USB-UTIL-ADVANZOOHH-PLAYSTATION-SOFTWARE-PLUS-CONFIG-FILE"
+                            target="_blank" class="btn-view">View Code<span class="wave"></span></a>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/USB-UTIL-ADVANZOOHH-PLAYSTATION-SOFTWARE-PLUS-CONFIG-FILE/raw/refs/heads/main/USBUTIL_v2.2_rev1.0_EN%20(English).7z"
+                            target="_blank" class="btn-view">Direct Download<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 14 -->
+            <div class="project-card fade-in stagger-14">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Windows Turbo C++ Integration for VS Code</h3>
+                    <p>A development environment configuration project that enables Turbo C/C++ support inside Visual
+                        Studio Code through customized setup files, compiler integration, build configurations, and
+                        streamlined programming workflows for C and C++ development.</p>
+                    <div class="project-tech">
+                        <span>Visual Studio Code</span>
+                        <span>C++</span>
+                        <span>Turbo C</span>
+                        <span>Development Environment Setup</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/WindowsTurboC-VS-Code" target="_blank" class="btn-view">View
+                            Code<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 19 -->
+            <div class="project-card fade-in stagger-19">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Turbo C/C++ Development Environment for Linux</h3>
+                    <p>A Linux-based Turbo C/C++ setup project that provides configuration files, compiler integration, development tools, and environment customization to enable classic Turbo C/C++ programming workflows on modern Linux systems.</p>
+                    <div class="project-tech">
+                        <span>Linux</span>
+                        <span>C Programming</span>
+                        <span>C++</span>
+                        <span>Development Environment</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/TurboCProjectForLinux" target="_blank" class="btn-view">View Code<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 15 -->
+            <div class="project-card fade-in stagger-15">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Penetration Testing 999 – Cybersecurity Research Platform</h3>
+                    <p>A cybersecurity learning and penetration testing platform focused on ethical hacking
+                        methodologies, security assessment techniques, vulnerability analysis, network security
+                        concepts, and cybersecurity awareness resources.</p>
+                    <div class="project-tech">
+                        <span>Penetration Testing</span>
+                        <span>Cybersecurity</span>
+                        <span>Ethical Hacking</span>
+                        <span>Network Security</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/Penetration-Testing-999" target="_blank"
+                            class="btn-view">View Code<span class="wave"></span></a>
+                        <a href="https://issu321.github.io/Penetration-Testing-999/" target="_blank"
+                            class="btn-code">Live Demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 16 -->
+            <div class="project-card fade-in stagger-16">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Windows Customization & Productivity Toolkit</h3>
+                    <p>A Windows optimization and customization toolkit that helps users personalize their desktop
+                        environment, enhance system appearance, streamline productivity settings, configure essential
+                        software, and create a more professional computing experience.</p>
+                    <div class="project-tech">
+                        <span>Windows</span>
+                        <span>System Customization</span>
+                        <span>Productivity Tools</span>
+                        <span>System Configuration</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/WINDOWS-COMSTOMIZATION" target="_blank"
+                            class="btn-view">View Code<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 17 -->
+            <div class="project-card fade-in stagger-17">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>IG Python Tracker – Instagram Analytics Tool</h3>
+                    <p>An Instagram tracking and analytics application that helps users monitor account activity,
+                        analyze engagement metrics, track followers and following statistics, and gain insights through
+                        an interactive web-based dashboard.</p>
+                    <div class="project-tech">
+                        <span>Python</span>
+                        <span>Streamlit</span>
+                        <span>Instagram Analytics</span>
+                        <span>Data Tracking</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/IG-Python-Tracker" target="_blank" class="btn-view">View
+                            Code<span class="wave"></span></a>
+                        <a href="https://ig-python-tracker-issu321.streamlit.app/" target="_blank" class="btn-code">Live
+                            Demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 18 -->
+            <div class="project-card fade-in stagger-18">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Ussu's Computer Technology Platform</h3>
+                    <p>A comprehensive technology platform focused on computer science, software development, emerging technologies, technical education, project showcases, and IT knowledge sharing for students, developers, and technology enthusiasts.</p>
+                    <div class="project-tech">
+                        <span>Web Development</span>
+                        <span>Computer Science</span>
+                        <span>Technology Education</span>
+                        <span>IT Solutions</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/Ussu-s-Computer-Technology-" target="_blank" class="btn-view">View Code<span class="wave"></span></a>
+                        <a href="https://issu321.github.io/Ussu-s-Computer-Technology-/" target="_blank" class="btn-code">Live Demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 26 -->
+            <div class="project-card fade-in stagger-26">
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Linux Installation Tools – System Deployment Platform</h3>
+                    <p>A comprehensive Linux installation and deployment platform that provides essential tools, setup guides, bootable media resources, distribution support, and system configuration utilities to simplify Linux installation and system administration workflows.</p>
+                    <div class="project-tech">
+                        <span>Linux</span>
+                        <span>System Administration</span>
+                        <span>Installation Tools</span>
+                        <span>Operating Systems</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/Linux-Installation-Tools" target="_blank" class="btn-view">View Code</a>
+                        <a href="https://issu321.github.io/Linux-Installation-Tools/" target="_blank" class="btn-code">Live Demo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 20 -->
+            <div class="project-card fade-in stagger-20">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Programming Packages – Developer Resource Hub</h3>
+                    <p>A comprehensive programming resource platform that provides essential development packages, software tools, libraries, setup guides, and learning resources for developers working across multiple programming languages and technologies.</p>
+                    <div class="project-tech">
+                        <span>Programming</span>
+                        <span>Software Packages</span>
+                        <span>Developer Tools</span>
+                        <span>Technical Resources</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/PROGRAMMING-PACKAGES" target="_blank" class="btn-view">View Code<span class="wave"></span></a>
+                        <a href="https://issu321.github.io/PROGRAMMING-PACKAGES/" target="_blank" class="btn-code">Live Demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 21 -->
+            <div class="project-card fade-in stagger-21">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2"/>
+                        <line x1="8" y1="21" x2="16" y2="21"/>
+                        <line x1="12" y1="17" x2="12" y2="21"/>
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>PlayStation Store – Gaming Platform Showcase</h3>
+                    <p>A PlayStation-focused web platform designed to showcase gaming content, digital products, console resources, game collections, and user-friendly interfaces inspired by modern gaming storefront experiences.</p>
+                    <div class="project-tech">
+                        <span>HTML5</span>
+                        <span>CSS3</span>
+                        <span>JavaScript</span>
+                        <span>Gaming Platform Design</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/PLAYSTATION-STORE" target="_blank" class="btn-view">View Code<span class="wave"></span></a>
+                        <a href="https://issu321.github.io/PLAYSTATION-STORE/" target="_blank" class="btn-code">Live Demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fake News Detection -->
+            <div class="project-card fade-in stagger-11">
+                <div class="glow-orb"></div>
+                <div class="project-image">
+                    <svg viewBox="0 0 24 24">
+                        <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                        <line x1="8" y1="21" x2="16" y2="21" />
+                        <line x1="12" y1="17" x2="12" y2="21" />
+                    </svg>
+                </div>
+                <div class="project-content">
+                    <h3>Fake News Detection using NLP</h3>
+                    <p>Intelligent Natural Language Processing system designed to detect and classify fake news articles
+                        using Machine Learning, text preprocessing, and predictive analytics.</p>
+                    <div class="project-tech">
+                        <span>NLP</span>
+                        <span>Python</span>
+                        <span>Machine Learning</span>
+                        <span>Fake News Detection</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/issu321/Fake-News-Detection-Using-NLP" target="_blank"
+                            rel="noopener noreferrer" class="btn-view">View Code<span class="wave"></span></a>
+                        <a href="https://fake-news-detection-python-issu321.streamlit.app/" target="_blank"
+                            rel="noopener noreferrer" class="btn-code">Live Demo<span class="wave"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <p>Built with <span class="heart">♥</span> by Mohammed Usman | 2026</p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>
