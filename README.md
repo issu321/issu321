@@ -248,6 +248,10 @@
 </div>
 
 ---
+## 🎥 Techie-Video
+
+https://github.com/user-attachments/assets/7547da0e-d60a-426b-9bc6-d8fb59b10bb6
+
 
 ## 🤖 About Me
 
