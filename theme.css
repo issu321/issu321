@@ -1,131 +1,1025 @@
-/* ==========================================================================
-   THEME.CSS v2 — Premium Design Token System
-   ========================================================================== */
+/* ============================================================
+   THEME ENGINE - 10 Premium Themes (5 Light + 5 Dark)
+   Dynamic CSS Variable System with Glassmorphism
+   ============================================================ */
 
+/* Base variable definitions - will be overridden by themes */
 :root {
-  /* LIGHT MODE — Warmer, more depth */
-  --bg-primary: #f8f7f5;
-  --bg-secondary: #ffffff;
-  --bg-tertiary: #f0eeeb;
-  --bg-elevated: rgba(255, 255, 255, 0.55);
+  /* Default to Arctic Glass Light */
+  --bg-primary: #f8f9fb;
+  --bg-secondary: #eef1f5;
+  --bg-tertiary: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.45);
+  --bg-glass-strong: rgba(255, 255, 255, 0.75);
+  --bg-glass-hover: rgba(255, 255, 255, 0.65);
+  --bg-card: rgba(255, 255, 255, 0.55);
+  --bg-navbar: rgba(255, 255, 255, 0.55);
+  --bg-input: rgba(255, 255, 255, 0.5);
 
-  --text-primary: #1a1a2e;
-  --text-secondary: #5a5a6e;
-  --text-tertiary: #8a8a9e;
-  --text-inverse: #ffffff;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverse: #f8fafc;
 
-  --accent: #6366f1;
-  --accent-soft: #818cf8;
-  --accent-muted: rgba(99, 102, 241, 0.1);
-  --accent-glow: rgba(99, 102, 241, 0.45);
-  --accent-glow-strong: rgba(99, 102, 241, 0.7);
+  --accent-primary: #3b82f6;
+  --accent-secondary: #8b5cf6;
+  --accent-tertiary: #06b6d4;
+  --accent-glow: rgba(59, 130, 246, 0.4);
+  --accent-gradient: linear-gradient(135deg, #3b82f6, #8b5cf6);
 
-  --border-subtle: rgba(0, 0, 0, 0.05);
-  --border-medium: rgba(0, 0, 0, 0.08);
-  --border-strong: rgba(0, 0, 0, 0.12);
-  --border-glass: rgba(255, 255, 255, 0.35);
+  --border-glass: rgba(255, 255, 255, 0.5);
+  --border-subtle: rgba(148, 163, 184, 0.2);
+  --border-strong: rgba(148, 163, 184, 0.4);
+  --border-glow: rgba(59, 130, 246, 0.3);
 
-  /* MUCH more transparent glass */
-  --glass-bg: rgba(255, 255, 255, 0.35);
-  --glass-bg-hover: rgba(255, 255, 255, 0.55);
-  --glass-border: rgba(255, 255, 255, 0.4);
-  --glass-border-hover: rgba(255, 255, 255, 0.7);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.06), 0 2px 8px rgba(0, 0, 0, 0.03);
-  --glass-shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.12), 0 8px 24px rgba(0, 0, 0, 0.06);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04);
+  --shadow-xl: 0 24px 48px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.06);
+  --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.15);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.5);
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.08);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.1);
-  --shadow-xl: 0 32px 80px rgba(0, 0, 0, 0.14);
+  --blur-sm: 8px;
+  --blur-md: 16px;
+  --blur-lg: 24px;
+  --blur-xl: 40px;
 
-  --glow-accent: 0 0 30px var(--accent-glow), 0 0 80px var(--accent-muted);
-  --glow-soft: 0 0 40px rgba(99, 102, 241, 0.2);
-  --glow-strong: 0 0 60px rgba(99, 102, 241, 0.3);
-
-  --gradient-hero: linear-gradient(135deg, #faf8f5 0%, #f0ede8 50%, #e8e4de 100%);
-  --gradient-card: linear-gradient(180deg, rgba(255,255,255,0.5) 0%, rgba(255,255,255,0.2) 100%);
-  --gradient-accent: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #a78bfa 100%);
-  --gradient-shine: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.5) 45%, rgba(255,255,255,0.7) 50%, rgba(255,255,255,0.5) 55%, transparent 65%);
-
-  --noise-opacity: 0.02;
-  --overlay-opacity: 0.25;
-
-  --font-display: 'Cinzel', serif;
-  --font-body: 'Inter', sans-serif;
-  --font-mono: 'Orbitron', monospace;
-
-  --radius-sm: 10px;
+  --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
   --radius-xl: 32px;
   --radius-full: 9999px;
 
   --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-base: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-smooth: 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-spring: 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
-  --transition-bounce: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-bounce: 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+
+  --font-heading: 'Cinzel', serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'Orbitron', monospace;
+
+  --grid-color: rgba(59, 130, 246, 0.05);
+  --neural-line: rgba(59, 130, 246, 0.15);
+  --neural-node: rgba(59, 130, 246, 0.6);
+  --particle-color: rgba(59, 130, 246, 0.3);
+  --aurora-1: rgba(59, 130, 246, 0.08);
+  --aurora-2: rgba(139, 92, 246, 0.06);
+  --aurora-3: rgba(6, 182, 212, 0.05);
 }
 
-[data-theme="dark"] {
-  --bg-primary: #0c0c14;
-  --bg-secondary: #12121e;
-  --bg-tertiary: #1a1a2c;
-  --bg-elevated: rgba(18, 18, 30, 0.55);
+/* ============================================================
+   THEME 1: ARCTIC GLASS (Light)
+   Apple Vision Pro inspired - Snow, Crystal, Soft White, Pearl
+   ============================================================ */
+[data-theme="arctic-glass"] {
+  --bg-primary: #f8f9fb;
+  --bg-secondary: #eef1f5;
+  --bg-tertiary: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.45);
+  --bg-glass-strong: rgba(255, 255, 255, 0.8);
+  --bg-glass-hover: rgba(255, 255, 255, 0.7);
+  --bg-card: rgba(255, 255, 255, 0.6);
+  --bg-navbar: rgba(255, 255, 255, 0.65);
+  --bg-input: rgba(255, 255, 255, 0.55);
 
-  --text-primary: #f0f0f5;
-  --text-secondary: #a0a0b5;
-  --text-tertiary: #6a6a80;
-  --text-inverse: #1a1a2e;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #94a3b8;
+  --text-inverse: #f8fafc;
 
-  --accent: #818cf8;
-  --accent-soft: #a5b4fc;
-  --accent-muted: rgba(129, 140, 248, 0.1);
-  --accent-glow: rgba(129, 140, 248, 0.5);
-  --accent-glow-strong: rgba(129, 140, 248, 0.75);
+  --accent-primary: #0ea5e9;
+  --accent-secondary: #6366f1;
+  --accent-tertiary: #06b6d4;
+  --accent-glow: rgba(14, 165, 233, 0.35);
+  --accent-gradient: linear-gradient(135deg, #0ea5e9, #6366f1);
 
-  --border-subtle: rgba(255, 255, 255, 0.04);
-  --border-medium: rgba(255, 255, 255, 0.07);
-  --border-strong: rgba(255, 255, 255, 0.1);
+  --border-glass: rgba(255, 255, 255, 0.6);
+  --border-subtle: rgba(148, 163, 184, 0.15);
+  --border-strong: rgba(148, 163, 184, 0.3);
+  --border-glow: rgba(14, 165, 233, 0.25);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.05), 0 1px 3px rgba(0,0,0,0.03);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.07), 0 4px 8px rgba(0,0,0,0.03);
+  --shadow-xl: 0 24px 48px rgba(0,0,0,0.09), 0 8px 16px rgba(0,0,0,0.04);
+  --shadow-glow: 0 0 40px rgba(14, 165, 233, 0.12);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.6);
+
+  --grid-color: rgba(14, 165, 233, 0.04);
+  --neural-line: rgba(14, 165, 233, 0.12);
+  --neural-node: rgba(14, 165, 233, 0.5);
+  --particle-color: rgba(14, 165, 233, 0.25);
+  --aurora-1: rgba(14, 165, 233, 0.06);
+  --aurora-2: rgba(99, 102, 241, 0.05);
+  --aurora-3: rgba(6, 182, 212, 0.04);
+}
+
+/* ============================================================
+   THEME 2: IVORY TITANIUM (Light)
+   Luxury Architecture - Matte Metal, Titanium, Warm White, Champagne
+   ============================================================ */
+[data-theme="ivory-titanium"] {
+  --bg-primary: #faf9f7;
+  --bg-secondary: #f0eeeb;
+  --bg-tertiary: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.5);
+  --bg-glass-strong: rgba(255, 255, 255, 0.85);
+  --bg-glass-hover: rgba(255, 255, 255, 0.75);
+  --bg-card: rgba(255, 255, 255, 0.65);
+  --bg-navbar: rgba(255, 255, 255, 0.7);
+  --bg-input: rgba(255, 255, 255, 0.6);
+
+  --text-primary: #1c1917;
+  --text-secondary: #57534e;
+  --text-muted: #a8a29e;
+  --text-inverse: #fafaf9;
+
+  --accent-primary: #b45309;
+  --accent-secondary: #78716c;
+  --accent-tertiary: #d97706;
+  --accent-glow: rgba(180, 83, 9, 0.3);
+  --accent-gradient: linear-gradient(135deg, #b45309, #78716c);
+
+  --border-glass: rgba(255, 255, 255, 0.65);
+  --border-subtle: rgba(168, 162, 158, 0.15);
+  --border-strong: rgba(168, 162, 158, 0.35);
+  --border-glow: rgba(180, 83, 9, 0.2);
+
+  --shadow-sm: 0 1px 2px rgba(28,25,23,0.04);
+  --shadow-md: 0 4px 12px rgba(28,25,23,0.06), 0 1px 3px rgba(28,25,23,0.04);
+  --shadow-lg: 0 12px 32px rgba(28,25,23,0.08), 0 4px 8px rgba(28,25,23,0.04);
+  --shadow-xl: 0 24px 48px rgba(28,25,23,0.1), 0 8px 16px rgba(28,25,23,0.05);
+  --shadow-glow: 0 0 40px rgba(180, 83, 9, 0.1);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.7);
+
+  --grid-color: rgba(180, 83, 9, 0.03);
+  --neural-line: rgba(180, 83, 9, 0.1);
+  --neural-node: rgba(180, 83, 9, 0.45);
+  --particle-color: rgba(180, 83, 9, 0.2);
+  --aurora-1: rgba(180, 83, 9, 0.05);
+  --aurora-2: rgba(120, 113, 108, 0.04);
+  --aurora-3: rgba(217, 119, 6, 0.03);
+}
+
+/* ============================================================
+   THEME 3: OCEAN BREEZE (Light)
+   Sky, Cloud, Fresh Blue, Minimal Cyan, Luxury Water Reflection
+   ============================================================ */
+[data-theme="ocean-breeze"] {
+  --bg-primary: #f0f9ff;
+  --bg-secondary: #e0f2fe;
+  --bg-tertiary: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.5);
+  --bg-glass-strong: rgba(255, 255, 255, 0.85);
+  --bg-glass-hover: rgba(255, 255, 255, 0.75);
+  --bg-card: rgba(255, 255, 255, 0.65);
+  --bg-navbar: rgba(255, 255, 255, 0.7);
+  --bg-input: rgba(255, 255, 255, 0.6);
+
+  --text-primary: #0c4a6e;
+  --text-secondary: #0369a1;
+  --text-muted: #7dd3fc;
+  --text-inverse: #f0f9ff;
+
+  --accent-primary: #0284c7;
+  --accent-secondary: #0ea5e9;
+  --accent-tertiary: #38bdf8;
+  --accent-glow: rgba(2, 132, 199, 0.35);
+  --accent-gradient: linear-gradient(135deg, #0284c7, #0ea5e9);
+
+  --border-glass: rgba(255, 255, 255, 0.65);
+  --border-subtle: rgba(125, 211, 252, 0.2);
+  --border-strong: rgba(125, 211, 252, 0.4);
+  --border-glow: rgba(2, 132, 199, 0.25);
+
+  --shadow-sm: 0 1px 2px rgba(2,132,199,0.04);
+  --shadow-md: 0 4px 12px rgba(2,132,199,0.06), 0 1px 3px rgba(2,132,199,0.04);
+  --shadow-lg: 0 12px 32px rgba(2,132,199,0.08), 0 4px 8px rgba(2,132,199,0.04);
+  --shadow-xl: 0 24px 48px rgba(2,132,199,0.1), 0 8px 16px rgba(2,132,199,0.05);
+  --shadow-glow: 0 0 40px rgba(2, 132, 199, 0.12);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.7);
+
+  --grid-color: rgba(2, 132, 199, 0.04);
+  --neural-line: rgba(2, 132, 199, 0.12);
+  --neural-node: rgba(2, 132, 199, 0.5);
+  --particle-color: rgba(2, 132, 199, 0.25);
+  --aurora-1: rgba(14, 165, 233, 0.07);
+  --aurora-2: rgba(56, 189, 248, 0.05);
+  --aurora-3: rgba(125, 211, 252, 0.04);
+}
+
+/* ============================================================
+   THEME 4: AURORA SILK (Light)
+   Soft Purple, Blue, Mint, Premium Silk, Luxury Glow
+   ============================================================ */
+[data-theme="aurora-silk"] {
+  --bg-primary: #faf5ff;
+  --bg-secondary: #f3e8ff;
+  --bg-tertiary: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.5);
+  --bg-glass-strong: rgba(255, 255, 255, 0.85);
+  --bg-glass-hover: rgba(255, 255, 255, 0.75);
+  --bg-card: rgba(255, 255, 255, 0.65);
+  --bg-navbar: rgba(255, 255, 255, 0.7);
+  --bg-input: rgba(255, 255, 255, 0.6);
+
+  --text-primary: #581c87;
+  --text-secondary: #7e22ce;
+  --text-muted: #c084fc;
+  --text-inverse: #faf5ff;
+
+  --accent-primary: #9333ea;
+  --accent-secondary: #6366f1;
+  --accent-tertiary: #a855f7;
+  --accent-glow: rgba(147, 51, 234, 0.35);
+  --accent-gradient: linear-gradient(135deg, #9333ea, #6366f1);
+
+  --border-glass: rgba(255, 255, 255, 0.65);
+  --border-subtle: rgba(192, 132, 252, 0.15);
+  --border-strong: rgba(192, 132, 252, 0.35);
+  --border-glow: rgba(147, 51, 234, 0.25);
+
+  --shadow-sm: 0 1px 2px rgba(88,28,135,0.04);
+  --shadow-md: 0 4px 12px rgba(88,28,135,0.06), 0 1px 3px rgba(88,28,135,0.04);
+  --shadow-lg: 0 12px 32px rgba(88,28,135,0.08), 0 4px 8px rgba(88,28,135,0.04);
+  --shadow-xl: 0 24px 48px rgba(88,28,135,0.1), 0 8px 16px rgba(88,28,135,0.05);
+  --shadow-glow: 0 0 40px rgba(147, 51, 234, 0.12);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.7);
+
+  --grid-color: rgba(147, 51, 234, 0.04);
+  --neural-line: rgba(147, 51, 234, 0.12);
+  --neural-node: rgba(147, 51, 234, 0.5);
+  --particle-color: rgba(147, 51, 234, 0.25);
+  --aurora-1: rgba(147, 51, 234, 0.06);
+  --aurora-2: rgba(99, 102, 241, 0.05);
+  --aurora-3: rgba(168, 85, 247, 0.04);
+}
+
+/* ============================================================
+   THEME 5: EMERALD PREMIUM (Light)
+   Luxury Green, White Marble, Natural Light, Forest Glass, Modern AI
+   ============================================================ */
+[data-theme="emerald-premium"] {
+  --bg-primary: #f0fdf4;
+  --bg-secondary: #dcfce7;
+  --bg-tertiary: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.5);
+  --bg-glass-strong: rgba(255, 255, 255, 0.85);
+  --bg-glass-hover: rgba(255, 255, 255, 0.75);
+  --bg-card: rgba(255, 255, 255, 0.65);
+  --bg-navbar: rgba(255, 255, 255, 0.7);
+  --bg-input: rgba(255, 255, 255, 0.6);
+
+  --text-primary: #064e3b;
+  --text-secondary: #047857;
+  --text-muted: #6ee7b7;
+  --text-inverse: #f0fdf4;
+
+  --accent-primary: #059669;
+  --accent-secondary: #10b981;
+  --accent-tertiary: #34d399;
+  --accent-glow: rgba(5, 150, 105, 0.35);
+  --accent-gradient: linear-gradient(135deg, #059669, #10b981);
+
+  --border-glass: rgba(255, 255, 255, 0.65);
+  --border-subtle: rgba(110, 231, 183, 0.2);
+  --border-strong: rgba(110, 231, 183, 0.4);
+  --border-glow: rgba(5, 150, 105, 0.25);
+
+  --shadow-sm: 0 1px 2px rgba(6,78,59,0.04);
+  --shadow-md: 0 4px 12px rgba(6,78,59,0.06), 0 1px 3px rgba(6,78,59,0.04);
+  --shadow-lg: 0 12px 32px rgba(6,78,59,0.08), 0 4px 8px rgba(6,78,59,0.04);
+  --shadow-xl: 0 24px 48px rgba(6,78,59,0.1), 0 8px 16px rgba(6,78,59,0.05);
+  --shadow-glow: 0 0 40px rgba(5, 150, 105, 0.12);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.7);
+
+  --grid-color: rgba(5, 150, 105, 0.04);
+  --neural-line: rgba(5, 150, 105, 0.12);
+  --neural-node: rgba(5, 150, 105, 0.5);
+  --particle-color: rgba(5, 150, 105, 0.25);
+  --aurora-1: rgba(16, 185, 129, 0.06);
+  --aurora-2: rgba(52, 211, 153, 0.05);
+  --aurora-3: rgba(110, 231, 183, 0.04);
+}
+
+/* ============================================================
+   THEME 6: OBSIDIAN GLASS (Dark)
+   Graphite, Dark Crystal, Apple Dark Mode, Luxury Black
+   ============================================================ */
+[data-theme="obsidian-glass"] {
+  --bg-primary: #0a0a0f;
+  --bg-secondary: #12121a;
+  --bg-tertiary: #1a1a24;
+  --bg-glass: rgba(30, 30, 45, 0.5);
+  --bg-glass-strong: rgba(30, 30, 45, 0.85);
+  --bg-glass-hover: rgba(40, 40, 60, 0.7);
+  --bg-card: rgba(30, 30, 45, 0.6);
+  --bg-navbar: rgba(20, 20, 30, 0.75);
+  --bg-input: rgba(30, 30, 45, 0.55);
+
+  --text-primary: #f1f5f9;
+  --text-secondary: #94a3b8;
+  --text-muted: #475569;
+  --text-inverse: #0f172a;
+
+  --accent-primary: #60a5fa;
+  --accent-secondary: #a78bfa;
+  --accent-tertiary: #38bdf8;
+  --accent-glow: rgba(96, 165, 250, 0.4);
+  --accent-gradient: linear-gradient(135deg, #60a5fa, #a78bfa);
+
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(148, 163, 184, 0.1);
+  --border-strong: rgba(148, 163, 184, 0.25);
+  --border-glow: rgba(96, 165, 250, 0.3);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.3);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.4), 0 1px 3px rgba(0,0,0,0.3);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.5), 0 4px 8px rgba(0,0,0,0.3);
+  --shadow-xl: 0 24px 48px rgba(0,0,0,0.6), 0 8px 16px rgba(0,0,0,0.4);
+  --shadow-glow: 0 0 40px rgba(96, 165, 250, 0.2);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.05);
+
+  --grid-color: rgba(96, 165, 250, 0.04);
+  --neural-line: rgba(96, 165, 250, 0.15);
+  --neural-node: rgba(96, 165, 250, 0.6);
+  --particle-color: rgba(96, 165, 250, 0.3);
+  --aurora-1: rgba(96, 165, 250, 0.06);
+  --aurora-2: rgba(167, 139, 250, 0.05);
+  --aurora-3: rgba(56, 189, 248, 0.04);
+}
+
+/* ============================================================
+   THEME 7: MIDNIGHT AI (Dark)
+   Deep Navy, Dark Blue, Electric Highlights, OpenAI Inspired
+   ============================================================ */
+[data-theme="midnight-ai"] {
+  --bg-primary: #020617;
+  --bg-secondary: #0f172a;
+  --bg-tertiary: #1e293b;
+  --bg-glass: rgba(15, 23, 42, 0.55);
+  --bg-glass-strong: rgba(15, 23, 42, 0.9);
+  --bg-glass-hover: rgba(30, 41, 59, 0.75);
+  --bg-card: rgba(15, 23, 42, 0.65);
+  --bg-navbar: rgba(2, 6, 23, 0.8);
+  --bg-input: rgba(15, 23, 42, 0.6);
+
+  --text-primary: #e2e8f0;
+  --text-secondary: #94a3b8;
+  --text-muted: #475569;
+  --text-inverse: #020617;
+
+  --accent-primary: #3b82f6;
+  --accent-secondary: #06b6d4;
+  --accent-tertiary: #60a5fa;
+  --accent-glow: rgba(59, 130, 246, 0.4);
+  --accent-gradient: linear-gradient(135deg, #3b82f6, #06b6d4);
+
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(148, 163, 184, 0.1);
+  --border-strong: rgba(148, 163, 184, 0.25);
+  --border-glow: rgba(59, 130, 246, 0.3);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.6), 0 4px 8px rgba(0,0,0,0.4);
+  --shadow-xl: 0 24px 48px rgba(0,0,0,0.7), 0 8px 16px rgba(0,0,0,0.5);
+  --shadow-glow: 0 0 40px rgba(59, 130, 246, 0.2);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.05);
+
+  --grid-color: rgba(59, 130, 246, 0.04);
+  --neural-line: rgba(59, 130, 246, 0.15);
+  --neural-node: rgba(59, 130, 246, 0.6);
+  --particle-color: rgba(59, 130, 246, 0.3);
+  --aurora-1: rgba(59, 130, 246, 0.06);
+  --aurora-2: rgba(6, 182, 212, 0.05);
+  --aurora-3: rgba(96, 165, 250, 0.04);
+}
+
+/* ============================================================
+   THEME 8: CARBON FIBER (Dark)
+   Dark Titanium, Steel, Professional Enterprise, Luxury Gray
+   ============================================================ */
+[data-theme="carbon-fiber"] {
+  --bg-primary: #111113;
+  --bg-secondary: #1a1a1c;
+  --bg-tertiary: #232326;
+  --bg-glass: rgba(35, 35, 38, 0.5);
+  --bg-glass-strong: rgba(35, 35, 38, 0.9);
+  --bg-glass-hover: rgba(50, 50, 55, 0.75);
+  --bg-card: rgba(35, 35, 38, 0.65);
+  --bg-navbar: rgba(17, 17, 19, 0.8);
+  --bg-input: rgba(35, 35, 38, 0.6);
+
+  --text-primary: #f4f4f5;
+  --text-secondary: #a1a1aa;
+  --text-muted: #52525b;
+  --text-inverse: #18181b;
+
+  --accent-primary: #d4d4d8;
+  --accent-secondary: #a1a1aa;
+  --accent-tertiary: #e4e4e7;
+  --accent-glow: rgba(212, 212, 216, 0.3);
+  --accent-gradient: linear-gradient(135deg, #d4d4d8, #a1a1aa);
+
   --border-glass: rgba(255, 255, 255, 0.06);
+  --border-subtle: rgba(161, 161, 170, 0.1);
+  --border-strong: rgba(161, 161, 170, 0.25);
+  --border-glow: rgba(212, 212, 216, 0.2);
 
-  --glass-bg: rgba(20, 20, 35, 0.35);
-  --glass-bg-hover: rgba(30, 30, 50, 0.55);
-  --glass-border: rgba(255, 255, 255, 0.08);
-  --glass-border-hover: rgba(255, 255, 255, 0.18);
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.3), 0 2px 8px rgba(0, 0, 0, 0.2);
-  --glass-shadow-hover: 0 20px 60px rgba(0, 0, 0, 0.4), 0 8px 24px rgba(0, 0, 0, 0.25);
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.4);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.5), 0 1px 3px rgba(0,0,0,0.4);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.6), 0 4px 8px rgba(0,0,0,0.4);
+  --shadow-xl: 0 24px 48px rgba(0,0,0,0.7), 0 8px 16px rgba(0,0,0,0.5);
+  --shadow-glow: 0 0 40px rgba(212, 212, 216, 0.1);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.05);
 
-  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.25);
-  --shadow-md: 0 4px 20px rgba(0, 0, 0, 0.35);
-  --shadow-lg: 0 16px 48px rgba(0, 0, 0, 0.4);
-  --shadow-xl: 0 32px 80px rgba(0, 0, 0, 0.5);
-
-  --glow-accent: 0 0 30px var(--accent-glow), 0 0 80px var(--accent-muted);
-  --glow-soft: 0 0 50px rgba(129, 140, 248, 0.18);
-  --glow-strong: 0 0 70px rgba(129, 140, 248, 0.28);
-
-  --gradient-hero: linear-gradient(135deg, #0a0a12 0%, #12121e 50%, #1a1a30 100%);
-  --gradient-card: linear-gradient(180deg, rgba(30,30,50,0.4) 0%, rgba(20,20,35,0.2) 100%);
-  --gradient-accent: linear-gradient(135deg, #818cf8 0%, #a78bfa 50%, #c4b5fd 100%);
-  --gradient-shine: linear-gradient(105deg, transparent 35%, rgba(255,255,255,0.1) 45%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.1) 55%, transparent 65%);
-
-  --noise-opacity: 0.03;
-  --overlay-opacity: 0.4;
+  --grid-color: rgba(212, 212, 216, 0.03);
+  --neural-line: rgba(212, 212, 216, 0.1);
+  --neural-node: rgba(212, 212, 216, 0.5);
+  --particle-color: rgba(212, 212, 216, 0.2);
+  --aurora-1: rgba(212, 212, 216, 0.04);
+  --aurora-2: rgba(161, 161, 170, 0.03);
+  --aurora-3: rgba(228, 228, 231, 0.02);
 }
 
+/* ============================================================
+   THEME 9: GALAXY NIGHT (Dark)
+   Deep Space, Purple Nebula, Minimal Cosmic Glow, Elegant Stars
+   ============================================================ */
+[data-theme="galaxy-night"] {
+  --bg-primary: #0f0518;
+  --bg-secondary: #1a0b2e;
+  --bg-tertiary: #240e3d;
+  --bg-glass: rgba(36, 14, 61, 0.5);
+  --bg-glass-strong: rgba(36, 14, 61, 0.9);
+  --bg-glass-hover: rgba(60, 20, 100, 0.75);
+  --bg-card: rgba(36, 14, 61, 0.65);
+  --bg-navbar: rgba(15, 5, 24, 0.8);
+  --bg-input: rgba(36, 14, 61, 0.6);
+
+  --text-primary: #f3e8ff;
+  --text-secondary: #d8b4fe;
+  --text-muted: #7e22ce;
+  --text-inverse: #0f0518;
+
+  --accent-primary: #c084fc;
+  --accent-secondary: #e879f9;
+  --accent-tertiary: #a855f7;
+  --accent-glow: rgba(192, 132, 252, 0.4);
+  --accent-gradient: linear-gradient(135deg, #c084fc, #e879f9);
+
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(192, 132, 252, 0.1);
+  --border-strong: rgba(192, 132, 252, 0.25);
+  --border-glow: rgba(192, 132, 252, 0.3);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.7), 0 4px 8px rgba(0,0,0,0.5);
+  --shadow-xl: 0 24px 48px rgba(0,0,0,0.8), 0 8px 16px rgba(0,0,0,0.6);
+  --shadow-glow: 0 0 40px rgba(192, 132, 252, 0.2);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.05);
+
+  --grid-color: rgba(192, 132, 252, 0.04);
+  --neural-line: rgba(192, 132, 252, 0.15);
+  --neural-node: rgba(192, 132, 252, 0.6);
+  --particle-color: rgba(192, 132, 252, 0.3);
+  --aurora-1: rgba(192, 132, 252, 0.06);
+  --aurora-2: rgba(232, 121, 249, 0.05);
+  --aurora-3: rgba(168, 85, 247, 0.04);
+}
+
+/* ============================================================
+   THEME 10: NEURAL MATRIX (Dark)
+   Dark Neural Network, AI Energy, Blue Nodes, Interconnected Intelligence
+   ============================================================ */
+[data-theme="neural-matrix"] {
+  --bg-primary: #050a0f;
+  --bg-secondary: #0a1628;
+  --bg-tertiary: #0f1d3a;
+  --bg-glass: rgba(15, 29, 58, 0.55);
+  --bg-glass-strong: rgba(15, 29, 58, 0.9);
+  --bg-glass-hover: rgba(20, 40, 80, 0.8);
+  --bg-card: rgba(15, 29, 58, 0.7);
+  --bg-navbar: rgba(5, 10, 15, 0.85);
+  --bg-input: rgba(15, 29, 58, 0.65);
+
+  --text-primary: #e0f2fe;
+  --text-secondary: #7dd3fc;
+  --text-muted: #0369a1;
+  --text-inverse: #050a0f;
+
+  --accent-primary: #00d4ff;
+  --accent-secondary: #0099cc;
+  --accent-tertiary: #66e5ff;
+  --accent-glow: rgba(0, 212, 255, 0.5);
+  --accent-gradient: linear-gradient(135deg, #00d4ff, #0099cc);
+
+  --border-glass: rgba(0, 212, 255, 0.1);
+  --border-subtle: rgba(0, 212, 255, 0.08);
+  --border-strong: rgba(0, 212, 255, 0.2);
+  --border-glow: rgba(0, 212, 255, 0.4);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.7), 0 4px 8px rgba(0,0,0,0.5);
+  --shadow-xl: 0 24px 48px rgba(0,0,0,0.8), 0 8px 16px rgba(0,0,0,0.6);
+  --shadow-glow: 0 0 40px rgba(0, 212, 255, 0.25);
+  --shadow-inner: inset 0 1px 2px rgba(0,212,255,0.05);
+
+  --grid-color: rgba(0, 212, 255, 0.05);
+  --neural-line: rgba(0, 212, 255, 0.2);
+  --neural-node: rgba(0, 212, 255, 0.7);
+  --particle-color: rgba(0, 212, 255, 0.4);
+  --aurora-1: rgba(0, 212, 255, 0.08);
+  --aurora-2: rgba(0, 153, 204, 0.06);
+  --aurora-3: rgba(102, 229, 255, 0.04);
+}
+
+/* Theme transition - smooth switching */
 *, *::before, *::after {
-  transition: background-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              border-color 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1),
-              color 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              border-color 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              fill 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              stroke 0.5s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-@media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
-    animation-duration: 0.01ms !important;
-    animation-iteration-count: 1 !important;
-    transition-duration: 0.01ms !important;
-  }
+/* Exclude certain elements from theme transition */
+canvas, .theme-transition-exclude, .theme-preview-card {
+  transition: none !important;
+}
+
+
+/* ============================================================
+   THEME 11: ROSE GOLD (Light)
+   Luxury Rose, Champagne Gold, Soft Pink, Premium Jewelry
+   ============================================================ */
+[data-theme="rose-gold"] {
+  --bg-primary: #fdf2f4;
+  --bg-secondary: #fce7eb;
+  --bg-tertiary: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.5);
+  --bg-glass-strong: rgba(255, 255, 255, 0.85);
+  --bg-glass-hover: rgba(255, 255, 255, 0.75);
+  --bg-card: rgba(255, 255, 255, 0.65);
+  --bg-navbar: rgba(255, 255, 255, 0.7);
+  --bg-input: rgba(255, 255, 255, 0.6);
+
+  --text-primary: #4a0e1e;
+  --text-secondary: #9f4663;
+  --text-muted: #f4a4b8;
+  --text-inverse: #fdf2f4;
+
+  --accent-primary: #e11d48;
+  --accent-secondary: #f59e0b;
+  --accent-tertiary: #fb7185;
+  --accent-glow: rgba(225, 29, 72, 0.35);
+  --accent-gradient: linear-gradient(135deg, #e11d48, #f59e0b);
+
+  --border-glass: rgba(255, 255, 255, 0.65);
+  --border-subtle: rgba(244, 164, 184, 0.2);
+  --border-strong: rgba(244, 164, 184, 0.4);
+  --border-glow: rgba(225, 29, 72, 0.25);
+
+  --shadow-sm: 0 1px 2px rgba(74,14,30,0.04);
+  --shadow-md: 0 4px 12px rgba(74,14,30,0.06), 0 1px 3px rgba(74,14,30,0.04);
+  --shadow-lg: 0 12px 32px rgba(74,14,30,0.08), 0 4px 8px rgba(74,14,30,0.04);
+  --shadow-xl: 0 24px 48px rgba(74,14,30,0.1), 0 8px 16px rgba(74,14,30,0.05);
+  --shadow-glow: 0 0 40px rgba(225, 29, 72, 0.12);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.7);
+
+  --grid-color: rgba(225, 29, 72, 0.04);
+  --neural-line: rgba(225, 29, 72, 0.12);
+  --neural-node: rgba(225, 29, 72, 0.5);
+  --particle-color: rgba(225, 29, 72, 0.25);
+  --aurora-1: rgba(225, 29, 72, 0.06);
+  --aurora-2: rgba(245, 158, 11, 0.05);
+  --aurora-3: rgba(251, 113, 133, 0.04);
+}
+
+/* ============================================================
+   THEME 12: LAVENDER DREAM (Light)
+   Soft Lavender, Periwinkle, Pastel Purple, Dreamy Clouds
+   ============================================================ */
+[data-theme="lavender-dream"] {
+  --bg-primary: #f5f3ff;
+  --bg-secondary: #ede9fe;
+  --bg-tertiary: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.5);
+  --bg-glass-strong: rgba(255, 255, 255, 0.85);
+  --bg-glass-hover: rgba(255, 255, 255, 0.75);
+  --bg-card: rgba(255, 255, 255, 0.65);
+  --bg-navbar: rgba(255, 255, 255, 0.7);
+  --bg-input: rgba(255, 255, 255, 0.6);
+
+  --text-primary: #2e1065;
+  --text-secondary: #6d28d9;
+  --text-muted: #c4b5fd;
+  --text-inverse: #f5f3ff;
+
+  --accent-primary: #8b5cf6;
+  --accent-secondary: #a78bfa;
+  --accent-tertiary: #c4b5fd;
+  --accent-glow: rgba(139, 92, 246, 0.35);
+  --accent-gradient: linear-gradient(135deg, #8b5cf6, #a78bfa);
+
+  --border-glass: rgba(255, 255, 255, 0.65);
+  --border-subtle: rgba(196, 181, 253, 0.2);
+  --border-strong: rgba(196, 181, 253, 0.4);
+  --border-glow: rgba(139, 92, 246, 0.25);
+
+  --shadow-sm: 0 1px 2px rgba(46,16,101,0.04);
+  --shadow-md: 0 4px 12px rgba(46,16,101,0.06), 0 1px 3px rgba(46,16,101,0.04);
+  --shadow-lg: 0 12px 32px rgba(46,16,101,0.08), 0 4px 8px rgba(46,16,101,0.04);
+  --shadow-xl: 0 24px 48px rgba(46,16,101,0.1), 0 8px 16px rgba(46,16,101,0.05);
+  --shadow-glow: 0 0 40px rgba(139, 92, 246, 0.12);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.7);
+
+  --grid-color: rgba(139, 92, 246, 0.04);
+  --neural-line: rgba(139, 92, 246, 0.12);
+  --neural-node: rgba(139, 92, 246, 0.5);
+  --particle-color: rgba(139, 92, 246, 0.25);
+  --aurora-1: rgba(139, 92, 246, 0.06);
+  --aurora-2: rgba(167, 139, 250, 0.05);
+  --aurora-3: rgba(196, 181, 253, 0.04);
+}
+
+/* ============================================================
+   THEME 13: CORAL SUNSET (Light)
+   Warm Coral, Peach, Sunset Orange, Tropical Vibes
+   ============================================================ */
+[data-theme="coral-sunset"] {
+  --bg-primary: #fff7ed;
+  --bg-secondary: #ffedd5;
+  --bg-tertiary: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.5);
+  --bg-glass-strong: rgba(255, 255, 255, 0.85);
+  --bg-glass-hover: rgba(255, 255, 255, 0.75);
+  --bg-card: rgba(255, 255, 255, 0.65);
+  --bg-navbar: rgba(255, 255, 255, 0.7);
+  --bg-input: rgba(255, 255, 255, 0.6);
+
+  --text-primary: #7c2d12;
+  --text-secondary: #c2410c;
+  --text-muted: #fdba74;
+  --text-inverse: #fff7ed;
+
+  --accent-primary: #f97316;
+  --accent-secondary: #fb923c;
+  --accent-tertiary: #ea580c;
+  --accent-glow: rgba(249, 115, 22, 0.35);
+  --accent-gradient: linear-gradient(135deg, #f97316, #fb923c);
+
+  --border-glass: rgba(255, 255, 255, 0.65);
+  --border-subtle: rgba(253, 186, 116, 0.2);
+  --border-strong: rgba(253, 186, 116, 0.4);
+  --border-glow: rgba(249, 115, 22, 0.25);
+
+  --shadow-sm: 0 1px 2px rgba(124,45,18,0.04);
+  --shadow-md: 0 4px 12px rgba(124,45,18,0.06), 0 1px 3px rgba(124,45,18,0.04);
+  --shadow-lg: 0 12px 32px rgba(124,45,18,0.08), 0 4px 8px rgba(124,45,18,0.04);
+  --shadow-xl: 0 24px 48px rgba(124,45,18,0.1), 0 8px 16px rgba(124,45,18,0.05);
+  --shadow-glow: 0 0 40px rgba(249, 115, 22, 0.12);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.7);
+
+  --grid-color: rgba(249, 115, 22, 0.04);
+  --neural-line: rgba(249, 115, 22, 0.12);
+  --neural-node: rgba(249, 115, 22, 0.5);
+  --particle-color: rgba(249, 115, 22, 0.25);
+  --aurora-1: rgba(249, 115, 22, 0.06);
+  --aurora-2: rgba(251, 146, 60, 0.05);
+  --aurora-3: rgba(234, 88, 12, 0.04);
+}
+
+/* ============================================================
+   THEME 14: MINT FRESH (Light)
+   Cool Mint, Seafoam, Fresh Green, Clean Energy
+   ============================================================ */
+[data-theme="mint-fresh"] {
+  --bg-primary: #f0fdf4;
+  --bg-secondary: #dcfce7;
+  --bg-tertiary: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.5);
+  --bg-glass-strong: rgba(255, 255, 255, 0.85);
+  --bg-glass-hover: rgba(255, 255, 255, 0.75);
+  --bg-card: rgba(255, 255, 255, 0.65);
+  --bg-navbar: rgba(255, 255, 255, 0.7);
+  --bg-input: rgba(255, 255, 255, 0.6);
+
+  --text-primary: #064e3b;
+  --text-secondary: #047857;
+  --text-muted: #6ee7b7;
+  --text-inverse: #f0fdf4;
+
+  --accent-primary: #14b8a6;
+  --accent-secondary: #2dd4bf;
+  --accent-tertiary: #5eead4;
+  --accent-glow: rgba(20, 184, 166, 0.35);
+  --accent-gradient: linear-gradient(135deg, #14b8a6, #2dd4bf);
+
+  --border-glass: rgba(255, 255, 255, 0.65);
+  --border-subtle: rgba(110, 231, 183, 0.2);
+  --border-strong: rgba(110, 231, 183, 0.4);
+  --border-glow: rgba(20, 184, 166, 0.25);
+
+  --shadow-sm: 0 1px 2px rgba(6,78,59,0.04);
+  --shadow-md: 0 4px 12px rgba(6,78,59,0.06), 0 1px 3px rgba(6,78,59,0.04);
+  --shadow-lg: 0 12px 32px rgba(6,78,59,0.08), 0 4px 8px rgba(6,78,59,0.04);
+  --shadow-xl: 0 24px 48px rgba(6,78,59,0.1), 0 8px 16px rgba(6,78,59,0.05);
+  --shadow-glow: 0 0 40px rgba(20, 184, 166, 0.12);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.7);
+
+  --grid-color: rgba(20, 184, 166, 0.04);
+  --neural-line: rgba(20, 184, 166, 0.12);
+  --neural-node: rgba(20, 184, 166, 0.5);
+  --particle-color: rgba(20, 184, 166, 0.25);
+  --aurora-1: rgba(20, 184, 166, 0.06);
+  --aurora-2: rgba(45, 212, 191, 0.05);
+  --aurora-3: rgba(94, 234, 212, 0.04);
+}
+
+/* ============================================================
+   THEME 15: PEARL WHITE (Light)
+   Pure Pearl, Diamond White, Silver Accents, Minimal Luxury
+   ============================================================ */
+[data-theme="pearl-white"] {
+  --bg-primary: #fafafa;
+  --bg-secondary: #f5f5f5;
+  --bg-tertiary: #ffffff;
+  --bg-glass: rgba(255, 255, 255, 0.5);
+  --bg-glass-strong: rgba(255, 255, 255, 0.9);
+  --bg-glass-hover: rgba(255, 255, 255, 0.8);
+  --bg-card: rgba(255, 255, 255, 0.7);
+  --bg-navbar: rgba(255, 255, 255, 0.75);
+  --bg-input: rgba(255, 255, 255, 0.65);
+
+  --text-primary: #171717;
+  --text-secondary: #525252;
+  --text-muted: #a3a3a3;
+  --text-inverse: #fafafa;
+
+  --accent-primary: #737373;
+  --accent-secondary: #a3a3a3;
+  --accent-tertiary: #d4d4d4;
+  --accent-glow: rgba(115, 115, 115, 0.3);
+  --accent-gradient: linear-gradient(135deg, #737373, #a3a3a3);
+
+  --border-glass: rgba(255, 255, 255, 0.7);
+  --border-subtle: rgba(163, 163, 163, 0.15);
+  --border-strong: rgba(163, 163, 163, 0.35);
+  --border-glow: rgba(115, 115, 115, 0.2);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.04);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.06), 0 1px 3px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.08), 0 4px 8px rgba(0,0,0,0.04);
+  --shadow-xl: 0 24px 48px rgba(0,0,0,0.1), 0 8px 16px rgba(0,0,0,0.05);
+  --shadow-glow: 0 0 40px rgba(115, 115, 115, 0.1);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.8);
+
+  --grid-color: rgba(115, 115, 115, 0.03);
+  --neural-line: rgba(115, 115, 115, 0.1);
+  --neural-node: rgba(115, 115, 115, 0.45);
+  --particle-color: rgba(115, 115, 115, 0.2);
+  --aurora-1: rgba(163, 163, 163, 0.04);
+  --aurora-2: rgba(212, 212, 212, 0.03);
+  --aurora-3: rgba(245, 245, 245, 0.02);
+}
+
+/* ============================================================
+   THEME 16: VOLCANIC INFERNO (Dark)
+   Magma Red, Lava Orange, Dark Ash, Fiery Energy
+   ============================================================ */
+[data-theme="volcanic-inferno"] {
+  --bg-primary: #0a0505;
+  --bg-secondary: #1a0a0a;
+  --bg-tertiary: #2a1010;
+  --bg-glass: rgba(42, 16, 16, 0.55);
+  --bg-glass-strong: rgba(42, 16, 16, 0.9);
+  --bg-glass-hover: rgba(60, 20, 20, 0.8);
+  --bg-card: rgba(42, 16, 16, 0.7);
+  --bg-navbar: rgba(10, 5, 5, 0.85);
+  --bg-input: rgba(42, 16, 16, 0.65);
+
+  --text-primary: #fef2f2;
+  --text-secondary: #fca5a5;
+  --text-muted: #7f1d1d;
+  --text-inverse: #0a0505;
+
+  --accent-primary: #ef4444;
+  --accent-secondary: #f97316;
+  --accent-tertiary: #fb923c;
+  --accent-glow: rgba(239, 68, 68, 0.5);
+  --accent-gradient: linear-gradient(135deg, #ef4444, #f97316);
+
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(252, 165, 165, 0.1);
+  --border-strong: rgba(252, 165, 165, 0.25);
+  --border-glow: rgba(239, 68, 68, 0.35);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.7), 0 4px 8px rgba(0,0,0,0.5);
+  --shadow-xl: 0 24px 48px rgba(0,0,0,0.8), 0 8px 16px rgba(0,0,0,0.6);
+  --shadow-glow: 0 0 40px rgba(239, 68, 68, 0.25);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.05);
+
+  --grid-color: rgba(239, 68, 68, 0.05);
+  --neural-line: rgba(239, 68, 68, 0.2);
+  --neural-node: rgba(239, 68, 68, 0.7);
+  --particle-color: rgba(239, 68, 68, 0.4);
+  --aurora-1: rgba(239, 68, 68, 0.08);
+  --aurora-2: rgba(249, 115, 22, 0.06);
+  --aurora-3: rgba(251, 146, 60, 0.04);
+}
+
+/* ============================================================
+   THEME 17: CYBER PUNK (Dark)
+   Neon Pink, Electric Cyan, Dark City, Retro Future
+   ============================================================ */
+[data-theme="cyber-punk"] {
+  --bg-primary: #0a0a0a;
+  --bg-secondary: #141414;
+  --bg-tertiary: #1f1f1f;
+  --bg-glass: rgba(31, 31, 31, 0.55);
+  --bg-glass-strong: rgba(31, 31, 31, 0.9);
+  --bg-glass-hover: rgba(50, 50, 50, 0.8);
+  --bg-card: rgba(31, 31, 31, 0.7);
+  --bg-navbar: rgba(10, 10, 10, 0.85);
+  --bg-input: rgba(31, 31, 31, 0.65);
+
+  --text-primary: #fafafa;
+  --text-secondary: #d4d4d4;
+  --text-muted: #525252;
+  --text-inverse: #0a0a0a;
+
+  --accent-primary: #ec4899;
+  --accent-secondary: #06b6d4;
+  --accent-tertiary: #f472b6;
+  --accent-glow: rgba(236, 72, 153, 0.5);
+  --accent-gradient: linear-gradient(135deg, #ec4899, #06b6d4);
+
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(236, 72, 153, 0.1);
+  --border-strong: rgba(236, 72, 153, 0.25);
+  --border-glow: rgba(236, 72, 153, 0.4);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.7), 0 4px 8px rgba(0,0,0,0.5);
+  --shadow-xl: 0 24px 48px rgba(0,0,0,0.8), 0 8px 16px rgba(0,0,0,0.6);
+  --shadow-glow: 0 0 40px rgba(236, 72, 153, 0.25);
+  --shadow-inner: inset 0 1px 2px rgba(236,72,153,0.05);
+
+  --grid-color: rgba(236, 72, 153, 0.05);
+  --neural-line: rgba(236, 72, 153, 0.2);
+  --neural-node: rgba(236, 72, 153, 0.7);
+  --particle-color: rgba(236, 72, 153, 0.4);
+  --aurora-1: rgba(236, 72, 153, 0.08);
+  --aurora-2: rgba(6, 182, 212, 0.06);
+  --aurora-3: rgba(244, 114, 182, 0.04);
+}
+
+/* ============================================================
+   THEME 18: FOREST DEEP (Dark)
+   Deep Forest, Moss Green, Dark Earth, Natural Mystery
+   ============================================================ */
+[data-theme="forest-deep"] {
+  --bg-primary: #052e16;
+  --bg-secondary: #0a3d20;
+  --bg-tertiary: #0f4d2a;
+  --bg-glass: rgba(15, 77, 42, 0.55);
+  --bg-glass-strong: rgba(15, 77, 42, 0.9);
+  --bg-glass-hover: rgba(25, 100, 55, 0.8);
+  --bg-card: rgba(15, 77, 42, 0.7);
+  --bg-navbar: rgba(5, 46, 22, 0.85);
+  --bg-input: rgba(15, 77, 42, 0.65);
+
+  --text-primary: #f0fdf4;
+  --text-secondary: #86efac;
+  --text-muted: #14532d;
+  --text-inverse: #052e16;
+
+  --accent-primary: #22c55e;
+  --accent-secondary: #4ade80;
+  --accent-tertiary: #16a34a;
+  --accent-glow: rgba(34, 197, 94, 0.5);
+  --accent-gradient: linear-gradient(135deg, #22c55e, #4ade80);
+
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(134, 239, 172, 0.1);
+  --border-strong: rgba(134, 239, 172, 0.25);
+  --border-glow: rgba(34, 197, 94, 0.35);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.7), 0 4px 8px rgba(0,0,0,0.5);
+  --shadow-xl: 0 24px 48px rgba(0,0,0,0.8), 0 8px 16px rgba(0,0,0,0.6);
+  --shadow-glow: 0 0 40px rgba(34, 197, 94, 0.25);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.05);
+
+  --grid-color: rgba(34, 197, 94, 0.05);
+  --neural-line: rgba(34, 197, 94, 0.2);
+  --neural-node: rgba(34, 197, 94, 0.7);
+  --particle-color: rgba(34, 197, 94, 0.4);
+  --aurora-1: rgba(34, 197, 94, 0.08);
+  --aurora-2: rgba(74, 222, 128, 0.06);
+  --aurora-3: rgba(22, 163, 74, 0.04);
+}
+
+/* ============================================================
+   THEME 19: SOLAR FLARE (Dark)
+   Solar Gold, Burning Yellow, Deep Space, Star Energy
+   ============================================================ */
+[data-theme="solar-flare"] {
+  --bg-primary: #0c0a09;
+  --bg-secondary: #1c1917;
+  --bg-tertiary: #292524;
+  --bg-glass: rgba(41, 37, 36, 0.55);
+  --bg-glass-strong: rgba(41, 37, 36, 0.9);
+  --bg-glass-hover: rgba(60, 55, 50, 0.8);
+  --bg-card: rgba(41, 37, 36, 0.7);
+  --bg-navbar: rgba(12, 10, 9, 0.85);
+  --bg-input: rgba(41, 37, 36, 0.65);
+
+  --text-primary: #fefce8;
+  --text-secondary: #fde047;
+  --text-muted: #854d0e;
+  --text-inverse: #0c0a09;
+
+  --accent-primary: #eab308;
+  --accent-secondary: #facc15;
+  --accent-tertiary: #fbbf24;
+  --accent-glow: rgba(234, 179, 8, 0.5);
+  --accent-gradient: linear-gradient(135deg, #eab308, #facc15);
+
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(253, 224, 71, 0.1);
+  --border-strong: rgba(253, 224, 71, 0.25);
+  --border-glow: rgba(234, 179, 8, 0.35);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.7), 0 4px 8px rgba(0,0,0,0.5);
+  --shadow-xl: 0 24px 48px rgba(0,0,0,0.8), 0 8px 16px rgba(0,0,0,0.6);
+  --shadow-glow: 0 0 40px rgba(234, 179, 8, 0.25);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.05);
+
+  --grid-color: rgba(234, 179, 8, 0.05);
+  --neural-line: rgba(234, 179, 8, 0.2);
+  --neural-node: rgba(234, 179, 8, 0.7);
+  --particle-color: rgba(234, 179, 8, 0.4);
+  --aurora-1: rgba(234, 179, 8, 0.08);
+  --aurora-2: rgba(250, 204, 21, 0.06);
+  --aurora-3: rgba(251, 191, 36, 0.04);
+}
+
+/* ============================================================
+   THEME 20: ARCTIC NIGHT (Dark)
+   Northern Lights, Aurora Borealis, Ice Blue, Polar Glow
+   ============================================================ */
+[data-theme="arctic-night"] {
+  --bg-primary: #020617;
+  --bg-secondary: #0f172a;
+  --bg-tertiary: #1e293b;
+  --bg-glass: rgba(15, 23, 42, 0.55);
+  --bg-glass-strong: rgba(15, 23, 42, 0.9);
+  --bg-glass-hover: rgba(30, 41, 59, 0.8);
+  --bg-card: rgba(15, 23, 42, 0.7);
+  --bg-navbar: rgba(2, 6, 23, 0.85);
+  --bg-input: rgba(15, 23, 42, 0.65);
+
+  --text-primary: #f0f9ff;
+  --text-secondary: #7dd3fc;
+  --text-muted: #0369a1;
+  --text-inverse: #020617;
+
+  --accent-primary: #22d3ee;
+  --accent-secondary: #67e8f9;
+  --accent-tertiary: #a5f3fc;
+  --accent-glow: rgba(34, 211, 238, 0.5);
+  --accent-gradient: linear-gradient(135deg, #22d3ee, #67e8f9);
+
+  --border-glass: rgba(255, 255, 255, 0.08);
+  --border-subtle: rgba(125, 211, 252, 0.1);
+  --border-strong: rgba(125, 211, 252, 0.25);
+  --border-glow: rgba(34, 211, 238, 0.35);
+
+  --shadow-sm: 0 1px 2px rgba(0,0,0,0.5);
+  --shadow-md: 0 4px 12px rgba(0,0,0,0.6), 0 1px 3px rgba(0,0,0,0.5);
+  --shadow-lg: 0 12px 32px rgba(0,0,0,0.7), 0 4px 8px rgba(0,0,0,0.5);
+  --shadow-xl: 0 24px 48px rgba(0,0,0,0.8), 0 8px 16px rgba(0,0,0,0.6);
+  --shadow-glow: 0 0 40px rgba(34, 211, 238, 0.25);
+  --shadow-inner: inset 0 1px 2px rgba(255,255,255,0.05);
+
+  --grid-color: rgba(34, 211, 238, 0.05);
+  --neural-line: rgba(34, 211, 238, 0.2);
+  --neural-node: rgba(34, 211, 238, 0.7);
+  --particle-color: rgba(34, 211, 238, 0.4);
+  --aurora-1: rgba(34, 211, 238, 0.08);
+  --aurora-2: rgba(103, 232, 249, 0.06);
+  --aurora-3: rgba(165, 243, 252, 0.04);
 }
