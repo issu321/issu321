@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="theme.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
     <div class="skeleton-loader" id="skeletonLoader">
@@ -448,19 +449,16 @@
         </div>
 
         <!-- GTA VI Countdown -->
-        <div class="countdown-mini">
-            <small>
-                <strong>⏳ GTA VI Releases In</strong><br>
+       <div class="countdown-mini">
+    <small style="font-size:12px;">
+        <strong>⏳ GTA VI Releases In</strong><br>
 
-                <span id="gta-years">0</span> Years •
-                <span id="gta-months">0</span> Months •
-                <span id="gta-weeks">0</span> Weeks •
-                <span id="gta-days">0</span> Days •
-                <span id="gta-hours">00</span>h :
-                <span id="gta-minutes">00</span>m :
-                <span id="gta-seconds">00</span>s
-            </small>
-        </div>
+        <span id="gtaDays">000</span> Days •
+        <span id="gtaHours">00</span> Hours •
+        <span id="gtaMinutes">00</span> Minutes •
+        <span id="gtaSeconds">00</span> Seconds
+    </small>
+</div>
 
         <div class="project-links">
             <a href="https://github.com/issu321/issu321-GTA6-Board" target="_blank" class="btn-view">
@@ -1613,6 +1611,39 @@
     <script src="main.js"></script>
 
 
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
 
+    // Official GTA VI Release
+    const releaseDate = new Date("November 19, 2026 00:00:00").getTime();
+
+    function updateCountdown() {
+
+        const now = new Date().getTime();
+        const distance = releaseDate - now;
+
+        if (distance <= 0) {
+            document.querySelector(".countdown-mini").innerHTML =
+                "<small><strong>🎉 GTA VI HAS BEEN RELEASED!</strong></small>";
+            clearInterval(timer);
+            return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        document.getElementById("gtaDays").textContent = days;
+        document.getElementById("gtaHours").textContent = String(hours).padStart(2, "0");
+        document.getElementById("gtaMinutes").textContent = String(minutes).padStart(2, "0");
+        document.getElementById("gtaSeconds").textContent = String(seconds).padStart(2, "0");
+    }
+
+    updateCountdown();
+    const timer = setInterval(updateCountdown, 1000);
+
+});
+</script>
 </body>
 </html>
