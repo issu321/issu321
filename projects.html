@@ -576,6 +576,23 @@ function copyCmd(btn, text) {
 }
 </script>
 
+            <script>
+function copyCmd(btn, text) {
+    navigator.clipboard.writeText(text).then(function() {
+        btn.textContent = 'Copied!';
+        btn.style.background = '#00d9ff';
+        btn.style.color = '#1a1a2e';
+        btn.style.borderColor = '#00d9ff';
+        setTimeout(function() {
+            btn.textContent = 'Copy';
+            btn.style.background = 'rgba(233,69,96,0.1)';
+            btn.style.color = '#e94560';
+            btn.style.borderColor = 'rgba(233,69,96,0.3)';
+        }, 1500);
+    });
+}
+</script>
+
 <!-- ==================== PROJECT 56 ==================== -->
 <div class="project-card fade-in stagger-56">
     <div class="project-image">
@@ -610,13 +627,11 @@ function copyCmd(btn, text) {
                 <b>Windows</b>
                 <p>Install-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
-                    
                     <span>pip install business-ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'pip install business-ussu321')">Copy</button>
                 </div>
                 <p>Launch-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
-                    
                     <span>python -m business_ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'python -m business_ussu321')">Copy</button>
                 </div>
@@ -624,10 +639,12 @@ function copyCmd(btn, text) {
                 <br>
 
                 <b>Kali Linux</b>
+                <p>Install-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>pip3 install business-ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'pip3 install business-ussu321')">Copy</button>
                 </div>
+                <p>Launch-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>python3 -m business_ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'python3 -m business_ussu321')">Copy</button>
@@ -669,10 +686,12 @@ function copyCmd(btn, text) {
         <div class="project-note">
             <small>
                 <b>Windows</b>
+                <p>Install-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>pip install hackboard-ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'pip install hackboard-ussu321')">Copy</button>
                 </div>
+                <p>Launch-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>python -m hackboard_ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'python -m hackboard_ussu321')">Copy</button>
@@ -681,10 +700,12 @@ function copyCmd(btn, text) {
                 <br>
 
                 <b>Kali Linux</b>
+                <p>Install-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>pip3 install hackboard-ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'pip3 install hackboard-ussu321')">Copy</button>
                 </div>
+                <p>Launch-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>python3 -m hackboard_ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'python3 -m hackboard_ussu321')">Copy</button>
@@ -726,10 +747,12 @@ function copyCmd(btn, text) {
         <div class="project-note">
             <small>
                 <b>Windows</b>
+                <p>Install-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>pip install algo-ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'pip install algo-ussu321')">Copy</button>
                 </div>
+                <p>Launch-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>python -m algo_ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'python -m algo_ussu321')">Copy</button>
@@ -738,10 +761,12 @@ function copyCmd(btn, text) {
                 <br>
 
                 <b>Kali Linux</b>
+                <p>Install-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>pip3 install algo-ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'pip3 install algo-ussu321')">Copy</button>
                 </div>
+                <p>Launch-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>python3 -m algo_ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'python3 -m algo_ussu321')">Copy</button>
@@ -783,10 +808,12 @@ function copyCmd(btn, text) {
         <div class="project-note">
             <small>
                 <b>Windows</b>
+                <p>Install-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>pip install programmingvisualizer-ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'pip install programmingvisualizer-ussu321')">Copy</button>
                 </div>
+                <p>Launch-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>python -m programmingvisualizer_ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'python -m programmingvisualizer_ussu321')">Copy</button>
@@ -795,10 +822,12 @@ function copyCmd(btn, text) {
                 <br>
 
                 <b>Kali Linux</b>
+                <p>Install-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>pip3 install programmingvisualizer-ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'pip3 install programmingvisualizer-ussu321')">Copy</button>
                 </div>
+                <p>Launch-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>python3 -m programmingvisualizer_ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'python3 -m programmingvisualizer_ussu321')">Copy</button>
@@ -840,10 +869,12 @@ function copyCmd(btn, text) {
         <div class="project-note">
             <small>
                 <b>Windows</b>
+                <p>Install-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>pip install aidataviz-ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'pip install aidataviz-ussu321')">Copy</button>
                 </div>
+                <p>Launch-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>python -m aidataviz_ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'python -m aidataviz_ussu321')">Copy</button>
@@ -852,10 +883,12 @@ function copyCmd(btn, text) {
                 <br>
 
                 <b>Kali Linux</b>
+                <p>Install-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>pip3 install aidataviz-ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'pip3 install aidataviz-ussu321')">Copy</button>
                 </div>
+                <p>Launch-Command</p>
                 <div style="display:flex;justify-content:space-between;align-items:center;background:rgba(15,15,26,0.6);border-radius:4px;padding:4px 10px;margin:4px 0;font-family:'Courier New',monospace;font-size:12px;color:#00d9ff;">
                     <span>python3 -m aidataviz_ussu321</span>
                     <button style="background:rgba(233,69,96,0.1);color:#e94560;border:1px solid rgba(233,69,96,0.3);border-radius:4px;padding:3px 10px;font-size:11px;cursor:pointer;font-family:sans-serif;letter-spacing:0.5px;" onclick="copyCmd(this,'python3 -m aidataviz_ussu321')">Copy</button>
@@ -864,6 +897,7 @@ function copyCmd(btn, text) {
         </div>
     </div>
 </div>
+            
             
             <!-- Project 49 -->
 <div class="project-card fade-in stagger-49">
