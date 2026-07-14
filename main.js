@@ -835,6 +835,8 @@
     initButtonWave();
     initKeyboardAccessibility();
     initParallax();
+    initSkillBars();
+    initResumeButton();
 
     if (document.readyState === 'complete') {
       hideSkeletonLoader();
@@ -850,6 +852,56 @@
         }
       });
     }, 100);
+  }
+
+  // ============================================================
+  // SKILL BAR ANIMATIONS
+  // ============================================================
+
+  function initSkillBars() {
+    const skillBars = document.querySelectorAll('.skill-bar-fill');
+    if (!skillBars.length) return;
+
+    const barObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const fill = entry.target;
+          const targetWidth = fill.dataset.width;
+          if (targetWidth) {
+            // Small delay for stagger effect based on index
+            const parent = fill.closest('.skill-bar-item');
+            const allItems = Array.from(fill.closest('.skills-bars-category').querySelectorAll('.skill-bar-item'));
+            const index = allItems.indexOf(parent);
+            const delay = index * 120;
+
+            setTimeout(() => {
+              fill.style.width = targetWidth + '%';
+              fill.classList.add('animated');
+            }, delay);
+          }
+          barObserver.unobserve(fill);
+        }
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -30px 0px' });
+
+    skillBars.forEach(bar => barObserver.observe(bar));
+  }
+
+  // ============================================================
+  // RESUME BUTTON WAVE EFFECT
+  // ============================================================
+
+  function initResumeButton() {
+    const resumeBtn = document.querySelector('.btn-resume');
+    if (!resumeBtn) return;
+
+    resumeBtn.addEventListener('mousemove', (e) => {
+      const rect = resumeBtn.getBoundingClientRect();
+      const x = ((e.clientX - rect.left) / rect.width) * 100;
+      const y = ((e.clientY - rect.top) / rect.height) * 100;
+      resumeBtn.style.setProperty('--mouse-x', x + '%');
+      resumeBtn.style.setProperty('--mouse-y', y + '%');
+    });
   }
 
   if (document.readyState === 'loading') {
